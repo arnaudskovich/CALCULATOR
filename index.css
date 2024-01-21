@@ -1,0 +1,189 @@
+@font-face {
+    font-family: Urbanist;
+    src: url('./Urbanist-VariableFont_wght.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Urbanist;
+    font-weight: 600;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    min-height: 100vh;
+}
+
+main {
+    width: 320px;
+    overflow: hidden;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 0 10px 2px #f3f2f2;
+    transform: scale(1.2);
+}
+
+#keyboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    padding: 40px 20px;
+    overflow: hidden;
+}
+
+.line {
+    display: grid;
+    width: min-content;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+
+.btn {
+    display: flex;
+    border: none;
+    width: 60px;
+    aspect-ratio: 1/1;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35%;
+    font-size: 1.5em;
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px #cccccc;
+    background-color: white;
+}
+
+.btn.inc {
+    font-size: 2em;
+}
+
+.btn.inc:nth-child(3) {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 15%;
+    background-color: transparent;
+    cursor: default;
+    box-shadow: none;
+}
+
+.btn.inc:nth-child(3) div {
+    display: flex;
+    border-radius: 15px;
+    width: 35px;
+    padding-top: 10px;
+    padding-left: 10px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #cccccc;
+}
+
+.btn.op {
+    background-color: #1dadad;
+    color: white;
+    font-size: 2em;
+}
+
+.btn.or {
+    background-color: #ffa500;
+    color: white;
+    font-size: 1.05em;
+}
+
+.btn.or:last-child {
+    position: relative;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.btn.or:last-child div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffa500;
+    width: 145px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    transform: translateX(-25px) translateY(-2px);
+    padding: 30px 35px 0 0;
+    font-size: 1.5em;
+    box-shadow: inset 2px 6px 5px #db8f00;
+}
+
+.btn.op2 {
+    background-color: #b0ecec86;
+    font-size: 1.05em;
+}
+
+#screen {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 220px;
+    padding: 15px 40px;
+    border-radius: 0 0 20% 20%;
+    box-shadow: inset 0 -5px 10px #f0efefee;
+}
+
+#old_number,
+#new_number {
+    text-align: right;
+}
+
+#old_number {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+#new_line {
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 200;
+}
+
+#new_line span:first-child {
+    font-weight: 500;
+    padding-bottom: 10px;
+    padding-top: 0;
+}
+
+#new_line span:last-child {
+    padding-top: 15px;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+#screen hr {
+    margin: 15px 0;
+}
+
+#result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px 15px 5px;
+}
+
+#result span:last-child {
+    font-size: 2.5em;
+    font-weight: 500;
+}
+
+#result span:first-child {
+    font-size: 1.5em;
+}
+
+#calculus {
+    margin: 10px 0;
+}

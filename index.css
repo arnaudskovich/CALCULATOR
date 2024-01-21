@@ -3,6 +3,46 @@
     src: url('./Urbanist-VariableFont_wght.ttf');
 }
 
+:root {
+    --btn-bg: #ffffff;
+    --btn-color: #000;
+    --btn-shadow: #cccccc;
+    --op-bg: #1dadad;
+    --op-color: #ffffff;
+    --op-2-bg-color: #b0ecec86;
+    --op-2-color: #000;
+    --equal-color: #ffffff;
+    --screen-shadow: #f0efefee;
+    --screen-bg: #ffffff;
+    --hr-color: #ececec;
+    color: #000;
+}
+
+.dark-mode,
+.dark-mode * {
+    --screen-bg: #4d4240;
+    --btn-bg: #736363;
+    --op-2-bg-color: #cae3e7;
+    --btn-shadow: #504543;
+    --btn-color: #fff;
+    --screen-shadow: #3d3938;
+    --equal-color: #a7731e;
+    --hr-color: #918482a6;
+    --toggler-bg: rgb(182, 174, 174);
+    color: white;
+}
+
+.mode-toggler {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #381229;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,18 +53,21 @@
 
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     min-width: 300px;
     min-height: 100vh;
+    padding: 50px 5px;
 }
 
 main {
     width: 320px;
     overflow: hidden;
-    border-radius: 0 0 25px 25px;
+    border-radius: 25px;
     box-shadow: 0 0 10px 2px #f3f2f2;
-    transform: scale(1.2);
+    transform: scale(1.1);
+    background-color: var(--screen-bg);
 }
 
 #keyboard {
@@ -35,6 +78,10 @@ main {
     row-gap: 10px;
     padding: 40px 20px;
     overflow: hidden;
+}
+
+#keyboard * {
+    transition: background .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .line {
@@ -56,8 +103,9 @@ main {
     font-size: 1.5em;
     font-weight: 400;
     cursor: pointer;
-    box-shadow: 1px 1px 3px #cccccc;
-    background-color: white;
+    box-shadow: 1px 1px 3px var(--btn-shadow);
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
 }
 
 .btn.inc {
@@ -84,18 +132,18 @@ main {
     position: absolute;
     top: 0;
     cursor: pointer;
-    box-shadow: 1px 1px 1px #cccccc;
+    box-shadow: 1px 1px 1px var(--btn-shadow);
 }
 
 .btn.op {
     background-color: #1dadad;
-    color: white;
+    color: #ffffff;
     font-size: 2em;
 }
 
 .btn.or {
     background-color: #ffa500;
-    color: white;
+    color: #ffffff;
     font-size: 1.05em;
 }
 
@@ -114,25 +162,27 @@ main {
     border-radius: 50%;
     aspect-ratio: 1/1;
     transform: translateX(-25px) translateY(-2px);
+    color: var(--equal-color);
     padding: 30px 35px 0 0;
     font-size: 1.5em;
     box-shadow: inset 2px 6px 5px #db8f00;
 }
 
 .btn.op2 {
-    background-color: #b0ecec86;
+    background-color: var(--op-2-bg-color);
+    color: var(--op-2-color);
     font-size: 1.05em;
 }
 
 #screen {
-    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 220px;
     padding: 15px 40px;
     border-radius: 0 0 20% 20%;
-    box-shadow: inset 0 -5px 10px #f0efefee;
+    box-shadow: inset 0 -5px 10px var(--screen-shadow);
+    transition: background .2s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 #old_number,
@@ -166,6 +216,7 @@ main {
 
 #screen hr {
     margin: 15px 0;
+    border-color: var(--hr-color);
 }
 
 #result {
